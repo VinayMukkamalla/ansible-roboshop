@@ -7,7 +7,7 @@
     zone_id: Z07155921YL2PZLNGBCDC
     domain: vinaymukkamalla.fun
     instances:
-    - mysql
+    - rabbitmq
 
   tasks:
   - name: create ec2 instance
