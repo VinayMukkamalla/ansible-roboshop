@@ -14,7 +14,7 @@
 
   
   - name: allow remote connections by changing conf
-    andible.builtin.replace:
+    ansible.builtin.replace:
       path: /etc/mongod.conf
       regex: '127.0.0.1'
       replace: '0.0.0.0'
