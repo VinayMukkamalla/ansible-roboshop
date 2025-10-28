@@ -47,7 +47,6 @@
       overwrite: true
     loop: "{{ ec2_output.results }}"
 
-
   - name: create route53 record for frontend
     amazon.aws.route53:
       state: present
@@ -57,7 +56,7 @@
       ttl: 60
       value: "{{ item.instances[0].public_ip_address }}"
       overwrite: true
-    when: item.item = "frontend"
+    when: item.item == "frontend"
     loop: "{{ ec2_output.results }}"
 
 
