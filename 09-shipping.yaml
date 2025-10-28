@@ -9,7 +9,16 @@
     loop:
     - maven
     - mysql
- 
+
+  # ansible needs the below libraries to use mysql directly without using command or shell modules
+  - name: install mysql python libraries
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      #state: present
+      executable: pip3.9
+    loop:
+    - PyMySQL 
+    - cryptography  
  
   - name: create roboshop system user
     ansible.builtin.user:
