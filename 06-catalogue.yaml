@@ -81,12 +81,20 @@
     ansible.builtin.shell: mongosh --host mongodb.vinaymukkamalla.fun </app/db/master-data.js
     when: catalogue_output.stdout | int < 0 # when catalogue collection is not available in mongodb database then it will return a negative value or else it will return positive value
 
-  - name: start and enable catalogue
-    ansible.builtin.service:
-      name: catalogue      
-      enabled: yes
-      state: started
+  # - name: start and enable catalogue
+  #   ansible.builtin.service:
+  #     name: catalogue      
+  #     enabled: yes
+  #     state: started
 
+
+  - name: daemon reload and start catalogue
+    ansible.builtin.systemd_service:
+      name: catalogue
+      enabled: true
+      state: started
+      daemon_reload: true
+      
 
 
 
