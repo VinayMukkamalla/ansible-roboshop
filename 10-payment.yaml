@@ -52,6 +52,11 @@
       requirements: requirements.txt
     args:
       chdir: /app
+
+  - name: copy payment service
+    ansible.builtin.copy:
+      src: payment.service
+      dest: /etc/systemd/system/payment.service
   
   - name: daemon reload enable and start payment
     ansible.builtin.systemd_service:
