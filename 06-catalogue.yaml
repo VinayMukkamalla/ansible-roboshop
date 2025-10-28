@@ -69,7 +69,7 @@
       name: mongodb-mongosh
       state: present
 
-  - name: connect to mongodb catalogue
+  - name: connect to mongodb from catalogue
     ansible.builtin.command: mongosh mongodb.vinaymukkamalla.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
     register: catalogue_output
 
