@@ -6,8 +6,8 @@
     sg_id: sg-04097b4e3c38bb38c
     zone_id: Z07155921YL2PZLNGBCDC
     domain: vinaymukkamalla.fun
-    instances:
-    - rabbitmq
+    # instances:
+    # - rabbitmq
 
   tasks:
   - name: create ec2 instance
